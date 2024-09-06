@@ -11,10 +11,10 @@ function App() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        // Fetch data from the backend (which uses Playwright)
+        // Fetch data from be w/ playwright
         const response = await axios.get('http://localhost:5000/api/hacker-news');
         
-        // Update state with the article data and sorted status
+        // Update state 
         setArticles(response.data.articles);
         setIsSorted(response.data.isSorted);
         setLoading(false);
@@ -24,9 +24,9 @@ function App() {
       }
     };
 
-    // Call the API on component mount
+    // Call the API on mount
     fetchArticles();
-  }, []);
+  }, []); //ensure it mounts once
 
   return (
     <div className="App">
@@ -35,10 +35,10 @@ function App() {
         <p>Loading articles...</p>
       ) : (
         <>
-          {/* Display validation result */}
+          {/* Display validation boolean */}
           <ValidationResult isSorted={isSorted} />
           
-          {/* Display the list of articles */}
+          {/* Display articles list */}
           <Articles articles={articles} />
         </>
       )}

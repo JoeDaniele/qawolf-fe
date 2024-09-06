@@ -1,5 +1,5 @@
 import React from 'react';
-
+//map component cycling through articles
 function Articles({ articles }) {
   return (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+//validation component 
 function ValidationResult({ isSorted }) {
   return (
     <div>
